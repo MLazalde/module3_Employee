@@ -21,22 +21,22 @@ const collectEmployees = function () {
 
     anotherEmployee = confirm("Another Employee?");
   }
+
   return employees;
 };
 
-// Display the average salary
-const displayAverageSalary = function (employeesArray) {
-  // TODO: Calculate and display the average salary
-};
+// // Display the average salary
+function displayAverageSalary(employeesArray) {}
+//   // TODO: Calculate and display the average salary
+//   //Define average salary
 
 // Select a random employee
-const getRandomEmployee = function (employeesArray) {
-  // TODO: Select and display a random employee
-};
+const getRandomEmployee = function (employeesArray) {};
+// TODO: Select and display a random employee
 
 /*
   ====================
-  STARTER CODE
+STARTER CODE
   Do not modify any of the code below this line:
 */
 
