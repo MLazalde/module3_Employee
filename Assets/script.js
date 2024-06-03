@@ -13,11 +13,11 @@ const collectEmployees = function () {
   let anotherEmployee = true;
 
   while (anotherEmployee) {
-    let firstname = prompt("Enter the Employee's First Name:");
+    let firstName = prompt("Enter the Employee's First Name:");
     let lastName = prompt("Enter the Employee's Last Name:");
     let salary = prompt("Enter the employee's salary:");
 
-    employees.push({ firstname, lastName, salary: parseFloat(salary) }); //parseFloat to convert to integer?
+    employees.push({ firstName, lastName, salary: parseFloat(salary) }); //parseFloat to convert to integer?
 
     anotherEmployee = confirm("Another Employee?");
   }
@@ -36,13 +36,20 @@ const displayAverageSalary = function (employeesArray) {
   ); //Learned from MDN Docs. To be perfectly honest, still don't know how this works!
 
   let averageSalary = totalSalary / employeesArray.length;
-  console.log(`The average salary between our employees is`, averageSalary);
+  console.log(`The average salary between our employees is ${averageSalary}`);
 };
 
 // Select a random employee
-const getRandomEmployee = function (employeesArray) {};
-// TODO: Select and display a random employee
-
+const getRandomEmployee = function (employeesArray) {
+  // TODO: Select and display a random employee
+  let randomArray = Math.floor(Math.random() * employeesArray.length);
+  let randomEmployee = employeesArray[randomArray];
+  console.log(
+    `Congratulations to our random drawing winner, ${
+      randomEmployee.firstName + " " + randomEmployee.lastName
+    }`
+  );
+};
 /*
   ====================
 STARTER CODE
