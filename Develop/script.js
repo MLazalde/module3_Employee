@@ -17,7 +17,7 @@ const collectEmployees = function () {
     let lastName = prompt("Enter the Employee's Last Name:");
     let salary = prompt("Enter the employee's salary:");
 
-    employees.push({ firstname, lastName, salary });
+    employees.push({ firstname, lastName, salary: parseFloat(salary) }); //parseFloat to convert to integer?
 
     anotherEmployee = confirm("Another Employee?");
   }
@@ -26,9 +26,18 @@ const collectEmployees = function () {
 };
 
 // // Display the average salary
-function displayAverageSalary(employeesArray) {}
+// function displayAverageSalary(employeesArray) {} //??? I don't think this is right. displayAverageSalary hasn't been defined? don't functions usually have the syntax of Function ()??
 //   // TODO: Calculate and display the average salary
 //   //Define average salary
+const displayAverageSalary = function (employeesArray) {
+  let totalSalary = employeesArray.reduce(
+    (sum, employee) => sum + employee.salary,
+    0
+  ); //Learned from MDN Docs. To be perfectly honest, still don't know how this works!
+
+  let averageSalary = totalSalary / employeesArray.length;
+  console.log(`The average salary between our employees is`, averageSalary);
+};
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {};
